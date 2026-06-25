@@ -1,0 +1,60 @@
+---
+const { frontmatter } = Astro.props;
+---
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <title>{frontmatter.title}</title>
+    <style>
+      body {
+        background-color: #c0c0c0;
+        color: #000000;
+        font-family: "Times New Roman", Times, serif;
+        margin: 20px;
+      }
+      .container {
+        background-color: #ffffff;
+        border: 3px double #000000;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .header {
+        border-bottom: 2px dashed #000000;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      a {
+        color: #0000ff;
+        text-decoration: underline;
+      }
+      img {
+        border: 2px solid #000000; /* Khung ảnh thô viền đen */
+        display: block;
+        margin: 15px auto;
+      }
+      pre {
+        background-color: #eeeeee;
+        border: 1px solid #888888;
+        padding: 10px;
+        font-family: "Courier New", Courier, monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        [ <a href="/">Back to Database Index</a> ]
+        <h2>{frontmatter.title}</h2>
+        <p><i>Published on: {frontmatter.date}</i></p>
+      </div>
+
+      <div class="content">
+        <slot /> </div>
+      
+      <hr />
+      <center>[ <a href="/">Back to Top</a> ]</center>
+    </div>
+  </body>
+</html>
